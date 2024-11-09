@@ -1,20 +1,10 @@
-import { useState } from "react";
 import "./App.css";
 import { BasicTypes } from "./typescript";
+import { useLanguaje } from "./hook";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [languaje, setLanguaje] = useState("Es");
-  const cambiaContador = (accion: "incrementa" | "decrementa") => {
-    if (accion === "incrementa") {
-      setCount(count + 1);
-    } else if (accion === "decrementa") {
-      setCount(count - 1);
-    }
-  };
-  const cambiaLanguaje = () => {
-    setLanguaje(languaje === "Es" ? "In" : "Es");
-  };
+  const { languaje, cambiaLanguaje } = useLanguaje();
+
   const nombre: string = "Gabriel";
   interface Persona {
     nombre: string;
@@ -48,6 +38,7 @@ function App() {
     },
   };
 
+ /*
   const usuario2: Usuario = {
     nombre: "Maria",
     edad: 28,
@@ -58,6 +49,7 @@ function App() {
       telefono: "555-5678",
     },
   };
+  */
   //console.log(languaje);
 
   return (
@@ -70,13 +62,8 @@ function App() {
           ? "Hola Soy " + persona.nombre
           : " Hello  I'am " + nombre}
       </h1>
-      <button onClick={() => cambiaContador("decrementa")}>
-        {languaje == "Es" ? "Uno menos " : "One less "}
-      </button>
-      <button onClick={() => cambiaContador("incrementa")}>
-        {languaje == "Es" ? "Uno mas" : "One more"}
-      </button>
-      <p>{count}</p>
+
+      
       <p>{usuario1.nombre}</p>
       <BasicTypes />
     </>

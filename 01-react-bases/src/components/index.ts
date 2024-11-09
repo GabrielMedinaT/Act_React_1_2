@@ -1,0 +1,1 @@
+export * from './Componetn1';

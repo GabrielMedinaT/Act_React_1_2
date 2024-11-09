@@ -1,11 +1,23 @@
-import React from "react";
+import { useLanguaje , useContador  } from "../hook";
+import { useState } from "react";
 
-const Componetn1 = () => {
+
+export const  Componetn1 = () => {
+  const { languaje } = useLanguaje();
+  const { cambiaContador } = useContador()
+  
+  //const  [ contador , Setcontador ] = useState(0);
+  
   return (
     <div>
-      <h1>Hola desde el comoponente 1</h1>
+      <button onClick={() => cambiaContador("decrementa")}>
+        {languaje == "Es" ? "Uno menos " : "One less "}
+      </button>
+      <button onClick={() => cambiaContador("incrementa")}>
+        {languaje == "Es" ? "Uno mas" : "One more"}
+      </button>
     </div>
   );
 };
 
-export default Componetn1;
+
