@@ -1,5 +1,5 @@
-import { useLanguaje , useContador  } from "../hook";
-import { useState } from "react";
+import { useLanguaje , useContador  } from "../hook/";
+
 
 
 export const  Componetn1 = () => {

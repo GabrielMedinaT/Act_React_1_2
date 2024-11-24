@@ -1,0 +1,90 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+/* Contenedor principal */
+.todo-container {
+  text-align: center;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Título */
+.todo-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de entrada */
+.todo-input-container {
+  margin-bottom: 20px;
+}
+
+/* Input de texto */
+.todo-input {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Botón para agregar tarea */
+.todo-add-button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #24de13;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.todo-add-button:hover {
+  background-color: #2dd866;
+}
+
+/* Lista de tareas */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Elemento de la lista */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* ID de la tarea */
+.todo-id {
+  margin-right: 20px;
+}
+
+/* Texto de la tarea */
+.todo-text {
+  flex: 1;
+  text-align: left;
+}
+
+/* Botón de eliminar */
+.todo-delete-button {
+  margin-left: 20px;
+  padding: 5px 10px;
+  background-color: #f62c2c;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-delete-button:hover {
+  background-color: #ffcccc;
+}

@@ -1,0 +1,23 @@
+{
+  "terminal.explorerKind": "external",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#61fd35",
+    "activityBar.background": "#61fd35",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#6184fd",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#61fd35",
+    "statusBar.background": "#39fc03",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#2eca02",
+    "statusBarItem.remoteBackground": "#39fc03",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#39fc03",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#39fc0399",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#39fc03"
+}
