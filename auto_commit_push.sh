@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Directorio del repositorio (carpeta actual)
 REPO_PATH="$(pwd)"
 
@@ -8,7 +10,7 @@ INTERVAL=60
 COMMIT_MESSAGE="AutoPush Gabriel: $(date '+%d-%m-%Y %H:%M:%S')"
 
 # Cambia al directorio del repositorio
-cd "REPO_PATH" || { echo "El repositorio no existe"; exit 1; }
+cd "$REPO_PATH" || { echo "El repositorio no existe"; exit 1; }
 
 # Bucle infinito para hacer commit, pull y push
 while true; do
@@ -20,12 +22,12 @@ while true; do
     REMOTE_HASH=$(git rev-parse origin/main)
     BASE_HASH=$(git merge-base HEAD origin/main)
 
-    if [ "LOCAL_HASH" = "REMOTE_HASH" ]; then
+    if [ "$LOCAL_HASH" = "$REMOTE_HASH" ]; then
         echo "[$(date)] Todo está sincronizado con el repositorio remoto."
-    elif [ "LOCAL_HASH" = "BASE_HASH" ]; then
+    elif [ "$LOCAL_HASH" = "$BASE_HASH" ]; then
         echo "[$(date)] Hay cambios en remoto. Haciendo pull..."
         git pull origin main
-    elif [ "REMOTE_HASH" = "BASE_HASH" ]; then
+    elif [ "$REMOTE_HASH" = "$BASE_HASH" ]; then
         echo "[$(date)] Hay cambios locales que aún no se han enviado."
     else
         echo "[$(date)] Conflicto detectado. Necesita resolución manual."
@@ -39,8 +41,8 @@ while true; do
     if git diff-index --quiet HEAD; then
         echo "[$(date)] No hay cambios nuevos para commitear. Esperando..."
     else
-        git commit -m "COMMIT_MESSAGE"
-        echo "[$(date)] Commit realizado: COMMIT_MESSAGE"
+        git commit -m "$COMMIT_MESSAGE"
+        echo "[$(date)] Commit realizado: $COMMIT_MESSAGE"
 
         # Hacer push al repositorio remoto
         echo "[$(date)] Enviando cambios al repositorio remoto..."
@@ -49,5 +51,5 @@ while true; do
     fi
 
     # Esperar el intervalo definido
-    sleep INTERVAL
+    sleep $INTERVAL
 done
