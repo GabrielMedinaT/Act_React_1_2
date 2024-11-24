@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { InputBox } from "./components/InputBox";
-import { BasicTypes } from "./typescript";
 import { useRecogeFrases, useLanguaje } from "./hook"; // Importa correctamente el hook
 import { ToDo } from "./components/ToDo";
 
